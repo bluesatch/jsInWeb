@@ -16,35 +16,84 @@ let myName = document.getElementById('myName')
 
 myName.innerText = 'Satch'
 
+// console.log(myName.style)
+
+// myName.style.fontFamily = 'sans-serif'
+// myName.style.color = 'red'
+
 // console.log(myName);
-let hero = 'Superman'
-let alias = 'Clark Kent'
-let powers = ['super strength', 'x-ray vision', 'super speed', 'heat vision']
-let enemies = ['Lex Luthor', 'Doomsday', 'Darkseid']
 
-const heroName = document.getElementById('heroName')
-heroName.innerText = hero
+myName.classList.add('red')
 
-const aliasName = document.getElementById('aliasName')
-aliasName.innerText = alias
+myName.classList.remove('red')
 
-const powerList = document.getElementById('powerList')
-const enemyList =  document.getElementById('enemyList')
+myName.classList.add('darkgoldenrod')
 
-// loop through array and create an li for each element then append to powerList
-powers.forEach(power => {
-    // do stuff
-    const li = document.createElement('li')
-    // console.log(li)
-    li.innerText = power
-    powerList.appendChild(li)
-})
+/**Refactor as a Class-based object
+ * 
+ * class Superhero {
+ * 
+ * }
+ * 
+ * 
+ */
 
-// console.log(powerList);
-enemies.forEach(enemy => {
-    const li = document.createElement('li')
+class Superhero {
+    constructor() {
+        this.hero,
+        this.alias,
+        this.powers = [],
+        this.enemies = [],
+        this.imgUrl
+    }
+    // end constructor
+    addPower(item) {
+        const powerList = document.getElementById('powerList')
+        const li = document.createElement('li')
+        const powers = this.powers
+        // take item and push it into powers array
+        powers.push(item)
 
-    li.innerText = enemy 
-    enemyList.appendChild(li)
-})
+        li.innerText = item
 
+        powerList.appendChild(li)
+    }
+
+    addEnemy(item) {
+        const enemyList = document.getElementById('enemyList')
+        const li = document.createElement('li')
+        const enemies = this.enemies
+        // take item and push it into powers array
+        enemies.push(item)
+
+        li.innerText = item
+
+        enemyList.appendChild(li)
+    }
+
+    displayHero() {
+        const heroName = document.getElementById('heroName')
+        const aliasName = document.getElementById('aliasName')
+        const img = document.getElementById('heroImg')
+
+        img.src = `images/${this.imgUrl}`
+        img.alt = `${this.hero}`
+
+        heroName.innerText = this.hero 
+        aliasName.innerText = this.alias
+    }
+}
+
+const superman = new Superhero()
+
+// console.log(superman)
+superman.hero = 'Superman'
+superman.alias = 'Clark Kent'
+superman.imgUrl = 'superman.jpeg'
+superman.displayHero()
+superman.addPower('super strength')
+superman.addPower('x-ray vision')
+superman.addPower('super speed')
+
+superman.addEnemy('Lex Luthor')
+superman.addEnemy('Darkseid')
