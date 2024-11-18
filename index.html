@@ -28,6 +28,7 @@
                                 class="form-control"
                                 id="heroInput" 
                                 name="heroName"
+                                required
                             />
                         </div>
                         <div class="col">
@@ -39,6 +40,7 @@
                                 class="form-control"
                                 id="aliasInput"
                                 name="aliasName"
+                                required
                             />
                         </div>
                     </div>
@@ -117,6 +119,7 @@
                                     class="form-control"
                                     id="power1"
                                     name="powers"
+                                    required
                                 >
                             </div>
                             <div class="power-input mb-3">
@@ -156,6 +159,7 @@
                                     class="form-control"
                                     id="enemy1"
                                     name="enemies"
+                                    required
                                 >
                             </div>
                             <div class="enemy-input mb-3">
@@ -196,6 +200,7 @@
                                 class="form-control"
                                 id="imgInput"
                                 name="imgUrl"
+                                required
                             />
                         </div>
                         <div class="col">
@@ -207,21 +212,30 @@
         </section>
         <section class="section" id="cardSection">
             <div class="container" id="container">
-                <div class="row" id="cardRow"></div>
-                <!-- <div class="card">
-                    <img src="" alt="" id="heroImg">
-                    <h2>Name:
-                        <span id="heroName"></span>
-                    </h2>
-                    <p>
-                        Alias:
-                        <span id="aliasName"></span>
-                    </p>
-                    <p>Powers:</p>
-                    <ul id="powerList"></ul>
-                    <p>Enemies:</p>
-                    <ul id="enemyList"></ul>
-                </div> -->
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4" id="cardRow">
+                    <!-- <div class="col">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/50x50" alt="placeholder img" class="img-fluid image card-img-top" />
+                            <div class="card-body">
+                                <h3 class="hero-heading display-5 text-capitalize">hero</h3>
+                                <p class="alias-text text-capitalize">Alias</p>
+                                <p class="is-hero-text text-capitalize">hero</p>
+                                <p class="text-capitalize">powers:</p>
+                                <ul id="powerList" class="list-group-flush">
+                                    <li class="power-item list-group-item">power1</li>
+                                    <li class="power-item list-group-item">power1</li>
+                                    <li class="power-item list-group-item">power1</li>
+                                </ul>
+                                <p class="text-capitalize">enemies:</p>
+                                <ul id="enemyList" class="list-group-flush">
+                                    <li class="power-item list-group-item">enemy1</li>
+                                    <li class="power-item list-group-item">enemy1</li>
+                                    <li class="power-item list-group-item">enemy1</li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
             </div>
         </section>
     </main>
